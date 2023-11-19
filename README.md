@@ -1,7 +1,7 @@
 # `@cameronhunter/pending-promises`
 
-[![npm package](https://img.shields.io/npm/v/%40cameronhunter/async-with-timeout)](https://www.npmjs.com/package/@cameronhunter/async-with-timeout)
-[![CI Status](https://github.com/cameronhunter/async-with-timeout/actions/workflows/CI.yml/badge.svg)](https://github.com/cameronhunter/async-with-timeout/actions/workflows/CI.yml)
+[![npm package](https://img.shields.io/npm/v/%40cameronhunter/pending-promises)](https://www.npmjs.com/package/@cameronhunter/pending-promises)
+[![CI Status](https://github.com/cameronhunter/pending-promises/actions/workflows/CI.yml/badge.svg)](https://github.com/cameronhunter/pending-promises/actions/workflows/CI.yml)
 
 > A map of pending promises that can be resolved/rejected at a later time.
 
