@@ -25,6 +25,7 @@ class MyAPI {
     }
 
     send(message: string): Promise<string> {
+        // Create a new pending promise
         const [id, promise] = this.#responses.create<string>();
 
         ws.send(JSON.stringify({ id, message }), (err) => {
