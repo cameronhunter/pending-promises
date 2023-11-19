@@ -37,11 +37,19 @@ class MyAPI {
         return promise;
     }
 
-    dispose() {
+    async dispose(): Promise<void> {
         this.#ws.removeAllEventListeners();
 
-        // Will terminate any pending promises.
-        this.#responses.dispose();
+        if (this.#ws.readyState !== WebSocket.CLOSED || this.#ws.readyState !== WebSocket.CLOSING) {
+            const closed = once(this.#ws, 'close');
+
+            // Will terminate any pending promises.
+            this.#responses.dispose();
+
+            this.#ws.close();
+
+            return closed;
+        }
     }
 
     #onMessage(event: WebSocket.MessageEvent): void {
