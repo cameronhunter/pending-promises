@@ -1,0 +1,55 @@
+# `@cameronhunter/pending-promises`
+
+[![npm package](https://img.shields.io/npm/v/%40cameronhunter/async-with-timeout)](https://www.npmjs.com/package/@cameronhunter/async-with-timeout)
+[![CI Status](https://github.com/cameronhunter/async-with-timeout/actions/workflows/CI.yml/badge.svg)](https://github.com/cameronhunter/async-with-timeout/actions/workflows/CI.yml)
+
+> A map of pending promises that can be resolved/rejected at a later time.
+
+This data structure is helpful for converting event-based APIs to promise-based.
+
+## Usage
+
+```ts
+import { PendingPromises } from '@cameronhunter/pending-promises';
+
+class MyAPI {
+    readonly #responses: PendingPromises = new PendingPromises();
+    readonly #ws: WebSocket;
+
+    constructor(ws: WebSocket) {
+        ws.once('close', this.dispose.bind(this));
+
+        ws.on('message', this.#onMessage.bind(this));
+
+        this.#ws = ws;
+    }
+
+    send(message: string): Promise<string> {
+        const [id, promise] = this.#responses.create<string>();
+
+        ws.send(JSON.stringify({ id, message }), (err) => {
+            if (err) {
+                this.#responses.reject(id, err);
+            }
+        });
+
+        return promise;
+    }
+
+    dispose() {
+        this.#ws.removeAllEventListeners();
+
+        // Will terminate any pending promises.
+        this.#responses.dispose();
+    }
+
+    #onMessage(event: WebSocket.MessageEvent): void {
+        const { id, result, error } = JSON.parse(event.data as string);
+
+        if (id) {
+            // Resolve or reject the pending promise.
+            error ? this.#responses.reject(id, error) : this.#responses.resolve(id, result);
+        }
+    }
+}
+```

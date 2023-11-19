@@ -1,0 +1,42 @@
+{
+  "name": "@cameronhunter/pending-promises",
+  "version": "0.0.0",
+  "description": "A map of pending promises that can be resolved/rejected at a later time",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "files": [
+    "build"
+  ],
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "keywords": [
+    "promise",
+    "event handlers"
+  ],
+  "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node-lts": "^18.12.5",
+    "@types/debug": "^4.1.12",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^18",
+    "jest": "^29.7.0",
+    "prettier": "^3.1.0",
+    "prettier-2": "npm:prettier@^2",
+    "ts-jest": "^29.1.1",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "@cameronhunter/async-with-timeout": "^3.1.0",
+    "@cameronhunter/clone-error": "^1.0.2",
+    "core-js": "^3.33.2",
+    "debug": "^4.3.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@8.10.5"
+}
