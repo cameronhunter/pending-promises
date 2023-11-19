@@ -3,7 +3,7 @@ name: '@latest'
 on:
     workflow_run:
         workflows:
-            - release
+            - main
         types:
             - completed
 
