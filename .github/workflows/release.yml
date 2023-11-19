@@ -1,8 +1,11 @@
-name: main
+name: Release
 
 on:
-    push:
-        branches: [main]
+    workflow_run:
+        workflows:
+            - test
+        types:
+            - completed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -36,9 +39,9 @@ jobs:
               id: changesets
               uses: changesets/action@v1
               with:
-                  createGithubReleases: false
                   title: Release package
                   publish: pnpm run release
+                  createGithubReleases: true
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
