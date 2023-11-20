@@ -1,7 +1,6 @@
 # `@cameronhunter/pending-promises`
 
 [![npm package](https://img.shields.io/npm/v/%40cameronhunter/pending-promises?logo=npm)](https://www.npmjs.com/package/@cameronhunter/pending-promises)
-[![@latest](https://img.shields.io/github/actions/workflow/status/cameronhunter/pending-promises/post-release.yml?logo=npm&label=%40latest)](https://github.com/cameronhunter/pending-promises/actions/workflows/post-release.yml)
 [![main branch status](https://img.shields.io/github/actions/workflow/status/cameronhunter/pending-promises/post-merge.yml?logo=github&label=main)](https://github.com/cameronhunter/pending-promises/actions/workflows/post-merge.yml)
 
 > A map of pending promises that can be resolved/rejected at a later time.
