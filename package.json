@@ -1,6 +1,6 @@
 {
   "name": "@cameronhunter/pending-promises",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A map of pending promises that can be resolved/rejected at a later time",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",
