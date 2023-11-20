@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.1.0
   '@cameronhunter/clone-error':
-    specifier: ^1.0.2
-    version: 1.0.2
+    specifier: ^1.0.3
+    version: 1.0.3
   core-js:
     specifier: ^3.33.3
     version: 3.33.3
@@ -400,11 +400,11 @@ packages:
     resolution: {integrity: sha512-QdCmrQnYKcQFHO764w4SQfcO/cuh+oycV3qg4PqB7xeo+yrbpTSV+5yECJOytz3seXP/ct1+dFFgWOck87yiBA==}
     engines: {node: '>=16'}
     dependencies:
-      '@cameronhunter/clone-error': 1.0.2
+      '@cameronhunter/clone-error': 1.0.3
     dev: false
 
-  /@cameronhunter/clone-error@1.0.2:
-    resolution: {integrity: sha512-0vNNdGp8l/hLg6hj+w1lrNuOJZWSHLqBJ+4ttaKFcsBCl8ZbhYKy/JhjRtA4AlRCqllqrXJHsdPSbZ3zHfOuLA==}
+  /@cameronhunter/clone-error@1.0.3:
+    resolution: {integrity: sha512-YvnsbtO1vpdZlKahSuSn4dFyqZRn62xOFoFJiA4CO7OLF+gc5fMvO8Myy5xVvwK6uTwN/M3hfCN+aWfBT83gbg==}
     dev: false
 
   /@changesets/apply-release-plan@6.1.4:
